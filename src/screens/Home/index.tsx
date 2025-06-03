@@ -14,6 +14,7 @@ export function Home() {
         }
 
          setParticipants(prevState => [...prevState, participantName]);
+         setParticipantName('');
     }
 
     
@@ -30,7 +31,6 @@ export function Home() {
                 }
             }
         ]);
-        
     }
 
   return (
@@ -43,7 +43,8 @@ export function Home() {
             <TextInput 
                 style={styles.input}
                 placeholder="Escreva aqui..."
-                onChangeText={text => setParticipantName(text)}
+                onChangeText={setParticipantName}
+                value={participantName}
             />
 
             <TouchableOpacity style={styles.button} onPress={handleParticipantAdd}>
